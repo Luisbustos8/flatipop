@@ -23,7 +23,7 @@ const TableProducts = (props) => {
                 <TableHead>
                     <TableRow>
                         <TableCell>Producto</TableCell>
-                        <TableCell>Precio</TableCell>
+                        <TableCell align='center'>Precio</TableCell>
                         <TableCell align='right'>Descripción</TableCell>
                     </TableRow>
                 </TableHead>
@@ -31,7 +31,7 @@ const TableProducts = (props) => {
                     {data.map(product => (
                         <TableRow key={product.id}>
                             <TableCell>{product.name}</TableCell>
-                            <TableCell>{product.price}€</TableCell>
+                            <TableCell align='center'>{product.price}€</TableCell>
                             <TableCell align='right'>{product.description}</TableCell>
                         </TableRow>
                     ))}

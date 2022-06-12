@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from "./footer";
 import Header from "./header";
 
 const Layout = (props) => {
@@ -11,7 +12,7 @@ const Layout = (props) => {
                     {children}
                 </section>
             </main>
-            <footer>© Prueba técnica Flat 101 - 2022</footer>
+            <Footer />
         </div>
     )
 };

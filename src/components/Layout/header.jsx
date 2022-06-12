@@ -27,7 +27,7 @@ theme.typography.h6 = {
   },
 }
 
-const Header = (props) => {
+const Header = () => {
 
     return (
         <header>

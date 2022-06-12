@@ -6,7 +6,8 @@ import ProductsListPage from "./pages/productsListPage";
 function App() {
   return (
     <div className="App">
-      <ProductsListPage />
+      {/* <ProductsListPage /> */}
+      <AddProduct />
     </div>
   );
 }
