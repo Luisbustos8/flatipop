@@ -6,7 +6,7 @@ import CardsProducts from "../components/listProducts/cardsProducts";
 import ViewMode from "../components/listProducts/viewMode";
 
 
-const ProductsListPage = () => {
+const ProductsListPage = (props ) => {
 
     const [ products, setProducts ] = useState();
     const [ modeView, setModeView ] = useState('list')

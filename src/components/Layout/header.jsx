@@ -8,6 +8,7 @@ import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import { Link } from "react-router-dom";
 
 const theme = createTheme({
   palette: {
@@ -18,12 +19,12 @@ const theme = createTheme({
 });
 
 theme.typography.h6 = {
-  fontSize: '16px',
+  fontSize: '14px',
   fontFamily: 'Raleway, Arial', 
   color: 'white',
   fontWeight: 'lighter',
   '@media (min-width:600px)': {
-    fontSize: '20px',
+    fontSize: '16px',
   },
 }
 
@@ -35,20 +36,22 @@ const Header = () => {
             <AppBar position="static" color='colorHeader'>
                 <Toolbar>
                     <Typography variant='h6'>
-                        F L A T I P O P  1 0 1 
+                        F L A T I P O P 1 0 1 * * *     
                     </Typography>
-                        <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', flexDirection: 'row-reverse' } }}>
+                        <Container sx={{ display: 'flex', justifyContent: 'flex-end'}}>
                             <Button
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                               style={{color: 'white'}}
+                               href={'/'}
                             >
                                 Productos
                             </Button>
                             <Button
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                style={{color: 'white', textDecoration:'none '}}
+                                href='/newProduct'
                             >
                                 Añade tu producto
                             </Button>
-                    </Box>
+                    </Container>
                 </Toolbar>
             </AppBar>
             </ThemeProvider>
