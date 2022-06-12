@@ -6,8 +6,8 @@ const ViewMode = (props) => {
     const {setMode} = props;
 
     const handleView = (e) => {
-        setMode(e)
-    }
+        setMode(e);
+    };
 
     return (
         <div style={{ diplay: 'flex' }}>

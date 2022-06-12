@@ -1,8 +1,16 @@
 import client from "./client";
 
-const productBaseURL = "/api";
+const productBaseURL = "/api/products";
 
 export const getProducts = () => {
-  const url = `${productBaseURL}/products`;
-  return client.get(url);
+  return client.get(productBaseURL);
+};
+
+export const publishProduct = (productData) => {
+  console.log(productData, "api");
+  return client.post(productBaseURL, productData, {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
 };
