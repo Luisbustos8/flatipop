@@ -10,9 +10,6 @@ import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 
 const theme = createTheme({
-typography: {
-    fontFamily: 'Raleway, Arial',
-  },
   palette: {
     colorHeader: {
       main: '#000000',

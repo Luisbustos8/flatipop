@@ -17,7 +17,7 @@ npm i axios (For http requests)
 
 npm install react-router-dom@6  (For routing)
 
-npm install @mui/material @emotion/react @emotion/styled (For styles)
+npm install @mui/material @emotion/react @emotion/styled  @mui/icons-material(For styles)
 ```
 
 ## Available Scripts
