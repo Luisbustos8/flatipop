@@ -19,34 +19,10 @@ npm install react-router-dom@6  (For routing)
 
 npm install @mui/material @emotion/react @emotion/styled  @mui/icons-material(For styles)
 
-npm install @reduxjs/toolkit react-redux redux-devtools-extension (For use Redux)
-
-
-
 ```
 
-## Available Scripts
+## To start dev
 
-In the project directory, you can run:
-
-### `npm start`
-
-### `npm test`
-
-### `npm run build`
-
-### `npm run eject`
-
-## Learn More
-
-### Code Splitting
-
-### Analyzing the Bundle Size
-
-### Making a Progressive Web App
-
-### Advanced Configuration
-
-### Deployment
-
-### `npm run build` fails to minify
+```
+npm run
+```
