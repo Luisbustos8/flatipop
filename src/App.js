@@ -5,7 +5,7 @@ import AddProduct from "./pages/AddProduct";
 import ProductsListPage from "./pages/ProductsListPage";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "../src/reusable/Alert";
-import ProductContext from "./ProductContext";
+import { ProductProvider } from "./context/ProductProvider";
 import Error404 from "./pages/Error404";
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <ProductContext.Provider value={{ value, setValue }}>
+      <ProductProvider>
         <Routes>
           <Route path="/" element={<ProductsListPage />} />
           <Route
@@ -36,7 +36,7 @@ function App() {
             ¡Su producto se publicó correctamente!
           </Alert>
         </Snackbar>
-      </ProductContext.Provider>
+      </ProductProvider>
     </div>
   );
 }

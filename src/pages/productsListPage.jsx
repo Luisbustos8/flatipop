@@ -4,13 +4,13 @@ import TableProducts from "../components/listProducts/TableProducts";
  import { getProducts } from '../api/products';
 import CardsProducts from "../components/listProducts/CardsProducts";
 import ViewMode from "../components/listProducts/ViewMode";
-import ProductContext from "../ProductContext";
+import {ProductContext} from "../context/ProductProvider";
 import Alert from '@mui/material/Alert';
 
 
 const ProductsListPage = ( props ) => {
 
-    const { value, setValue } = useContext(ProductContext);
+    const { products, setProducts } = useContext(ProductContext);
 
     const [ modeView, setModeView ] = useState('list')
     const [ error, setError ] = useState(null);
@@ -18,7 +18,7 @@ const ProductsListPage = ( props ) => {
    
     const getDataProducts = async () => {
         const dataProducts = await getProducts();
-        setValue(dataProducts.data);
+        setProducts(dataProducts.data);
     };
    
     useEffect(() => {
@@ -35,9 +35,9 @@ const ProductsListPage = ( props ) => {
             {
                 modeView === 'list' 
                 ?
-                <TableProducts data={value} />
+                <TableProducts data={products} />
                 :
-                <CardsProducts data={value} />
+                <CardsProducts data={products} />
             }
         </Layout>
         
