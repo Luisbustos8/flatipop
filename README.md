@@ -21,6 +21,10 @@ npm install @mui/material @emotion/react @emotion/styled  @mui/icons-material(Fo
 
 ```
 
+## To connect with API
+
+In the file example.env you should create a `.env` file based on the `example.env`. Replace the examples with your paths.
+
 ## To start dev
 
 ```
