@@ -1,8 +1,8 @@
 import React from 'react';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import { Link } from "react-router-dom";
+
+
 const Footer = ( props ) => {
-    const { position } = props;
+    
     const styleFooter = {
         backgroundColor: 'black',
         position:'relative',
@@ -21,6 +21,6 @@ const Footer = ( props ) => {
             </p>
         </footer>
     )
-}
+};
 
 export default Footer;

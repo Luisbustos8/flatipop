@@ -7,7 +7,6 @@ export const getProducts = () => {
 };
 
 export const publishProduct = (productData) => {
-  console.log(productData, "api");
   return client.post(productBaseURL, productData, {
     headers: {
       "Content-Type": "application/json",

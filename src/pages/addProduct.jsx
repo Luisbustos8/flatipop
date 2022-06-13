@@ -1,6 +1,6 @@
 import React, {useState} from "react";
-import Layout from "../components/Layout/layout";
-import AddProductForm from "../components/addProduct/addProductForm";
+import Layout from "../components/layout/Layout";
+import AddProductForm from "../components/addProduct/AddProductForm";
 import { publishProduct } from "../api/products";
 import { useNavigate } from "react-router-dom";
 

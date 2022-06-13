@@ -3,10 +3,7 @@ import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import Alert from '@mui/material/Alert';
 import { Container } from "@mui/system";
-import Snackbar from '@mui/material/Snackbar';
-import IconButton from '@mui/material/IconButton';
-import CloseIcon from '@mui/icons-material/Close';
-import { useNavigate } from "react-router-dom";
+import Loader from "../../reusable/Loader";
 
    const formStyle={
        display:'flex', 
@@ -25,11 +22,9 @@ import { useNavigate } from "react-router-dom";
 
 const AddProductForm = (props) => {
 
-    const { onSubmit, error, newProductSuccess, loading } = props;
+    const { onSubmit, error, loading } = props;
 
     const [ newProduct, setNewProduct ] = useState();
-
-    let navigate = useNavigate();
 
     const handleProductData = event => {
         setNewProduct(oldProductData => {
@@ -50,7 +45,7 @@ const AddProductForm = (props) => {
          <Container style={formStyle}>
                <h1>PUBLICA TU PRODUCTO</h1>
                {error !== null ?  <Alert severity="error">{error}</Alert> : null}
-               { loading ? <p>Loading...</p> :
+               { loading ? <Loader /> :
                 <>
                  <TextField
                      style={{ marginTop: '10px'}}

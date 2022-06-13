@@ -1,16 +1,16 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import AddProduct from "./pages/addProduct";
-import ProductsListPage from "./pages/productsListPage";
+import AddProduct from "./pages/AddProduct";
+import ProductsListPage from "./pages/ProductsListPage";
 import Snackbar from "@mui/material/Snackbar";
-import Alert from "../src/utils/alert";
+import Alert from "../src/reusable/Alert";
+import ProductContext from "./ProductContext";
+import Error404 from "./pages/Error404";
+
 function App() {
   const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen(true);
-  };
+  const [value, setValue] = useState([]);
 
   const handleClose = (event) => {
     setOpen(false);
@@ -18,15 +18,25 @@ function App() {
 
   return (
     <div className="App">
-      <Routes>
-        <Route path="/" element={<ProductsListPage />} />
-        <Route path="/newProduct" element={<AddProduct setOpen={setOpen} />} />
-      </Routes>
-      <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          ¡Su producto se publicó correctamente!
-        </Alert>
-      </Snackbar>
+      <ProductContext.Provider value={{ value, setValue }}>
+        <Routes>
+          <Route path="/" element={<ProductsListPage />} />
+          <Route
+            path="/newProduct"
+            element={<AddProduct setOpen={setOpen} />}
+          />
+          <Route path="*" element={<Error404 />} />
+        </Routes>
+        <Snackbar open={open} autoHideDuration={4000} onClose={handleClose}>
+          <Alert
+            onClose={handleClose}
+            severity="success"
+            sx={{ width: "100%" }}
+          >
+            ¡Su producto se publicó correctamente!
+          </Alert>
+        </Snackbar>
+      </ProductContext.Provider>
     </div>
   );
 }

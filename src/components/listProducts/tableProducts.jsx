@@ -6,8 +6,8 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-import Box from '@mui/material/Box';
 import { Container } from '@mui/material';
+import Loader from '../../reusable/Loader';
 
 const TableProducts = (props) => {
 
@@ -15,29 +15,29 @@ const TableProducts = (props) => {
 
     return (
         <>
-     { typeof data === 'undefined' ? <h6>Loading...</h6> :
+     { typeof data === 'undefined' ? <Loader /> :
         <>
         <Container sx={{ display: 'flex', justifyContent: 'center', width:'700px'}}>
-        <TableContainer component={Paper}>
-            <Table >,
-                <TableHead>
-                    <TableRow>
-                        <TableCell>Producto</TableCell>
-                        <TableCell align='center'>Precio</TableCell>
-                        <TableCell align='right'>Descripción</TableCell>
-                    </TableRow>
-                </TableHead>
-                <TableBody>
-                    {data.map(product => (
-                        <TableRow key={product.id}>
-                            <TableCell>{product.name}</TableCell>
-                            <TableCell align='center'>{product.price}€</TableCell>
-                            <TableCell align='right'>{product.description}</TableCell>
+            <TableContainer component={Paper}>
+                <Table >
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Producto</TableCell>
+                            <TableCell align='center'>Precio</TableCell>
+                            <TableCell align='right'>Descripción</TableCell>
                         </TableRow>
-                    ))}
-                </TableBody>
-            </Table>
-        </TableContainer>
+                    </TableHead>
+                    <TableBody>
+                        {data.map(product => (
+                            <TableRow key={product._id}>
+                                <TableCell>{product.name}</TableCell>
+                                <TableCell align='center'>{product.price}€</TableCell>
+                                <TableCell align='right'>{product.description}</TableCell>
+                            </TableRow>
+                        ))}
+                    </TableBody>
+                </Table>
+            </TableContainer>
         </Container>
     </>
     }

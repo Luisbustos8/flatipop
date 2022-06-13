@@ -1,4 +1,4 @@
-# Welcome to Flatipop
+# Welcome to Flatipop 101
 
 The application to load your products and have a list of them
 
@@ -18,6 +18,11 @@ npm i axios (For http requests)
 npm install react-router-dom@6  (For routing)
 
 npm install @mui/material @emotion/react @emotion/styled  @mui/icons-material(For styles)
+
+npm install @reduxjs/toolkit react-redux redux-devtools-extension (For use Redux)
+
+
+
 ```
 
 ## Available Scripts
@@ -45,5 +50,3 @@ In the project directory, you can run:
 ### Deployment
 
 ### `npm run build` fails to minify
-
-# flatipop

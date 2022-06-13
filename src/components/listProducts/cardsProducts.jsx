@@ -5,6 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import placeholder from '../../assets/placeholder.png';
 import { Container } from '@mui/material';
+import Loader from '../../reusable/Loader';
 
 
 const CardsProducts = (props) => {
@@ -12,20 +13,19 @@ const CardsProducts = (props) => {
     return (
         <>
         {typeof data === 'undefined' ?
-             <h6>Loading...</h6> 
+             <Loader />
              : 
              <>
              <Container sx={{ display: 'flex', flexWrap: 'wrap',justifyContent: 'center' }}>
                 {data.map(product => {
                     return (
-                <Card sx={{ maxWidth: 345, width: '300px', m:2 }}>
+                <Card sx={{ maxWidth: 345, width: '300px', m:2 }} key={product._id}>
                     <CardContent>
                         <CardMedia
                             component="img"
                             height="140"
-                            // src={placeholder}
                             image={ product.image ? product.image : placeholder}
-                            alt="green iguana"
+                            alt="product image"
                         />
                         <Typography gutterBottom variant="h5" component="div">
                             {product.name}

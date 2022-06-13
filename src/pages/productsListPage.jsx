@@ -1,39 +1,43 @@
-import React, {useState, useEffect} from "react";
-import Layout from "../components/Layout/layout";
-import TableProducts from "../components/listProducts/tableProducts";
-import { getProducts } from '../api/products';
-import CardsProducts from "../components/listProducts/cardsProducts";
-import ViewMode from "../components/listProducts/viewMode";
+import React, {useState, useEffect, useContext} from "react";
+import Layout from "../components/layout/Layout";
+import TableProducts from "../components/listProducts/TableProducts";
+ import { getProducts } from '../api/products';
+import CardsProducts from "../components/listProducts/CardsProducts";
+import ViewMode from "../components/listProducts/ViewMode";
+import ProductContext from "../ProductContext";
+import Alert from '@mui/material/Alert';
 
 
-const ProductsListPage = (props ) => {
+const ProductsListPage = ( props ) => {
 
-    const [ products, setProducts ] = useState();
+    const { value, setValue } = useContext(ProductContext);
+
     const [ modeView, setModeView ] = useState('list')
-    const [ error, setError ] = useState();
-    const [ loading, setLoading ] = useState();
+    const [ error, setError ] = useState(null);
 
+   
     const getDataProducts = async () => {
         const dataProducts = await getProducts();
-        setProducts(dataProducts.data);
+        setValue(dataProducts.data);
     };
-
+   
     useEffect(() => {
         getDataProducts();
-    },[])
 
-    console.log(modeView)
+    },[])
 
     return(
         <Layout>
+      
             <h1>VISITA TODOS NUESTROS PRODUCTOS</h1>
+            {error !== null ?  <Alert severity="error">{error}</Alert> : null}
             <ViewMode setMode={setModeView}/>
             {
                 modeView === 'list' 
                 ?
-                <TableProducts data={products} />
+                <TableProducts data={value} />
                 :
-                <CardsProducts data={products} />
+                <CardsProducts data={value} />
             }
         </Layout>
         
